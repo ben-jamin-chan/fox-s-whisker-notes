@@ -14,6 +14,11 @@ import memory13Image from '@/assets/13.jpeg';
 import memory14Image from '@/assets/14.jpeg';
 import memory15Image from '@/assets/15.jpeg';
 import memory16Image from '@/assets/16.jpeg';
+import memory17Image from '@/assets/17.jpeg';
+import memory18Image from '@/assets/18.jpeg';
+import memory19Image from '@/assets/19.jpeg';
+import memory20Image from '@/assets/20.jpeg';
+import memory21Image from '@/assets/21.jpeg';
 
 export interface Memory {
   id: string;
@@ -34,7 +39,7 @@ export const sampleMemories: Memory[] = [
     id: '1',
     content: "Remember our first adventure together overseas? This has to be my favorite photo, that's when I knew you were the one.",
     type: 'memory',
-    // FIXME: foxPun: "You're foxy and you know it! 🦊", 
+    foxPun: "A proper traditional photo, this has to be my favorite! ❤️", 
     imageUrl: memory3Image,
   },
   {
@@ -49,7 +54,7 @@ export const sampleMemories: Memory[] = [
     content: "When times were good, and we were young and excited about life and out future together",
     type: 'future',
     foxPun: "It's going to be fox-tastic! ✨",
-    imageUrl: memory3Image, 
+    imageUrl: memory2Image, 
   },
   {
     id: '4',
@@ -60,7 +65,7 @@ export const sampleMemories: Memory[] = [
   },
   {
     id: '5',
-    content: "We still look alike, so don't mess with us 🤨",
+    content: "We still look alike, this photo is telling them: Don't mess with us 🤨",
     type: 'reason',
     foxPun: "You make my heart do a happy fox bounce! 💓",
     imageUrl: memory5Image,
@@ -109,7 +114,7 @@ export const sampleMemories: Memory[] = [
   },
   {
     id: '12',
-    content: "Your kindness to others inspires me every day. Also, look at how young you were🤣",
+    content: "Your kindness to others inspires me every day. Also, look at how young you were 🤣",
     type: 'reason',
     foxPun: "Not sure if you still remember when and where was this ahihi!",
     imageUrl: memory12Image,
@@ -125,7 +130,7 @@ export const sampleMemories: Memory[] = [
     id: '14',
     content: "Love this photo too, everyone looks so happy here!",
     type: 'joke',
-    foxPun: "Fox cake for a con heo",
+    foxPun: "Fox cake for a con heo 🎂",
     imageUrl: memory14Image,
   },
   {
@@ -139,48 +144,44 @@ export const sampleMemories: Memory[] = [
     id: '16',
     content: "Gotta say, I love this photo!",
     type: 'future',
-    foxPun: "That's the look of waiting until late just for Shin Zushi",
+    foxPun: "That's the look of waiting until late just for Shin Zushi 🍣🍱",
     imageUrl: memory16Image,
   },
-  // {
-  //   id: '18',
-  //   content: "I love your creativity and how you see beauty in unexpected places. You've taught me to look at the world differently.",
-  //   type: 'reason',
-  //   foxPun: "Seeing the world through foxy eyes! 👀",
-  // },
-  // {
-  //   id: '19',
-  //   content: "Remember that meal you made that was absolutely perfect? I still think about it. You put so much love into everything.",
-  //   type: 'memory',
-  //   foxPun: "Fox-approved cuisine! 👨‍🍳",
-  // },
-  // {
-  //   id: '20',
-  //   content: "Every moment with you feels like coming home to a warm, cozy den. You are my home.",
-  //   type: 'reason',
-  //   foxPun: "Home is wherever you are, my love! 🦊💕",
-  // },
-  // {
-  //   id: '3',
-  //   content: "One day, I want to take you to Japan to see the fox village. Just imagine—hundreds of fluffy foxes, and you in the middle of them all!",
-  //   type: 'future',
-  //   foxPun: "It's going to be fox-tastic! ✨",
-  //   imageUrl: memory2Image, 
-  // }
-  // {
-  //   id: '8',
-  //   content: "I love how you make even ordinary moments feel magical. Grocery shopping, cooking dinner—everything's an adventure with you.",
-  //   type: 'reason',
-  //   foxPun: "Life's more fun-tastic with my favorite fox! 🛒",
-  //   imageUrl: memory8Image,
-  // // },
-  // {
-  //   id: '11',
-  //   content: "I want to build a life with you filled with adventures, quiet mornings, and endless laughter.",
-  //   type: 'future',
-  //   foxPun: "Building our den, one moment at a time! 🏡",
-  //   imageUrl: memory1Image,
-  // },
+  {
+    id: '17',
+    content: "I love how you make even ordinary moments feel magical. Grocery shopping, cooking dinner—everything's an adventure with you.",
+    type: 'memory',
+    foxPun: "Fox-approved cuisine! 👨‍🍳",
+    imageUrl: memory17Image,
+  },
+  {
+    id: '18',
+    content: "One day, I want to take you to Japan to see the fox village. Just imagine—hundreds of fluffy foxes, and you in the middle of them all!",
+    type: 'future',
+    foxPun: "It's going to be fox-tastic! ✨",
+    imageUrl: memory18Image,
+  },
+  {
+    id: '19',
+    content: "Every moment with you feels like coming home to a warm, cozy den.",
+    type: 'reason',
+    foxPun: "Home is wherever you are, con heo! 💕",
+    imageUrl: memory19Image
+  },
+  {
+    id: '20',
+    content: "Praying and manifesting that 2026 will be best in recent years",
+    type: 'future',
+    foxPun: "Mo phắc",
+    imageUrl: memory20Image,
+  },
+  {
+    id: '21',
+    content: "This is why you are special, con heo",
+    type: 'future',
+    foxPun: "Having a home and seeing you everyday like this! 🏡",
+    imageUrl: memory21Image,
+  },
 ];
 
 export const getRandomMemory = (memories: Memory[]): Memory => {
