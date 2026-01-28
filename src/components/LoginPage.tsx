@@ -157,7 +157,7 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
             transition={{ delay: 0.5 }}
             className="text-center text-sm text-muted-foreground mt-6 font-body italic"
           >
-            Made with love, for my favorite con heo 🦊
+            Made with love, for my favorite fox 🦊
           </motion.p>
         </div>
       </motion.div>

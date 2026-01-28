@@ -2,23 +2,10 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import LoginPage from '@/components/LoginPage';
 import FoxDen from '@/components/FoxDen';
-import ValentineCountdown from '@/components/ValentineCountdown';
-
-// Set Valentine's Day 2025 as the unlock date (change year as needed)
-const VALENTINE_DATE = new Date('2025-02-14T00:00:00');
 
 const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isUnlocked, setIsUnlocked] = useState(false);
-
-  // Check if we're past Valentine's Day
-  useEffect(() => {
-    const now = new Date();
-    if (now >= VALENTINE_DATE) {
-      setIsUnlocked(true);
-    }
-  }, []);
 
   // Check for existing session
   useEffect(() => {
@@ -37,10 +24,6 @@ const Index = () => {
   const handleLogout = () => {
     localStorage.removeItem('foxDenSession');
     setIsLoggedIn(false);
-  };
-
-  const handleUnlock = () => {
-    setIsUnlocked(true);
   };
 
   if (isLoading) {
@@ -64,11 +47,6 @@ const Index = () => {
         </motion.div>
       </div>
     );
-  }
-
-  // Show countdown if before Valentine's Day
-  if (!isUnlocked) {
-    return <ValentineCountdown targetDate={VALENTINE_DATE} onUnlock={handleUnlock} />;
   }
 
   return (
