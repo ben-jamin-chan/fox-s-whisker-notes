@@ -156,7 +156,7 @@ export const sampleMemories: Memory[] = [
   },
   {
     id: '18',
-    content: "One day, I want to take you to Japan to see the fox village. Just imagine—hundreds of fluffy foxes, and you in the middle of them all!",
+    content: "One day, I want to take you to Japan to see the con cào village. Just imagine—hundreds of fluffy foxes, and you in the middle of them all!",
     type: 'future',
     foxPun: "It's going to be fox-tastic! ✨",
     imageUrl: memory18Image,
