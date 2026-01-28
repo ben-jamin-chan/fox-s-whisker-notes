@@ -104,9 +104,12 @@ const FoxDen = ({ onLogout }: FoxDenProps) => {
           <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4 drop-shadow-lg">
             Welcome to Our Den
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-md mx-auto font-body">
-            Every memory is a treasure. Draw one and let me remind you why I love you 💕
-          </p>
+          <p className="text-lg md:text-xl max-w-md mx-auto font-body text-center leading-relaxed text-gray-800 
+relative">
+  <span className="absolute inset-0 blur-2xl bg-pink-300/30 -z-10 rounded-full"></span>
+  Every memory is a treasure. Draw one and let me remind you why I love you 💕
+</p>
+
         </motion.div>
 
         {/* Fox mascot with glow */}
