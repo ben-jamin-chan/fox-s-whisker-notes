@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fox's Den of Memories - Cozy Woodland Theme */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Warm cream background like parchment */
+    --background: 35 35% 97%;
+    --foreground: 25 30% 18%;
+
+    /* Cozy den card surfaces */
+    --card: 35 40% 95%;
+    --card-foreground: 25 30% 18%;
+
+    --popover: 35 40% 95%;
+    --popover-foreground: 25 30% 18%;
+
+    /* Fox orange - warm and inviting */
+    --primary: 24 85% 55%;
+    --primary-foreground: 35 35% 98%;
+
+    /* Forest green - woodland accent */
+    --secondary: 145 35% 35%;
+    --secondary-foreground: 35 35% 98%;
+
+    /* Soft sage for muted elements */
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Golden amber accent */
+    --accent: 38 90% 55%;
+    --accent-foreground: 25 30% 15%;
+
+    /* Warm rust for destructive */
+    --destructive: 10 70% 45%;
+    --destructive-foreground: 35 35% 98%;
+
+    /* Warm browns for borders */
+    --border: 30 25% 82%;
+    --input: 30 25% 85%;
+    --ring: 24 85% 55%;
+
+    --radius: 1rem;
+
+    /* Custom fox-themed colors */
+    --fox-orange: 24 85% 55%;
+    --fox-rust: 15 70% 42%;
+    --fox-cream: 35 45% 93%;
+    --fox-amber: 38 90% 55%;
+    --forest-green: 145 35% 35%;
+    --forest-dark: 150 30% 22%;
+    --bark-brown: 25 35% 30%;
+    --parchment: 40 40% 96%;
+    --golden-glow: 45 100% 70%;
+
+    /* Sidebar colors */
+    --sidebar-background: 35 35% 95%;
+    --sidebar-foreground: 25 30% 18%;
+    --sidebar-primary: 24 85% 55%;
+    --sidebar-primary-foreground: 35 35% 98%;
+    --sidebar-accent: 40 30% 90%;
+    --sidebar-accent-foreground: 25 30% 18%;
+    --sidebar-border: 30 25% 82%;
+    --sidebar-ring: 24 85% 55%;
+  }
+
+  .dark {
+    /* Dark cozy den - like a warm burrow at night */
+    --background: 25 25% 10%;
+    --foreground: 35 30% 92%;
+
+    --card: 25 20% 14%;
+    --card-foreground: 35 30% 92%;
+
+    --popover: 25 20% 14%;
+    --popover-foreground: 35 30% 92%;
+
+    --primary: 24 80% 58%;
+    --primary-foreground: 25 25% 10%;
+
+    --secondary: 145 30% 40%;
+    --secondary-foreground: 35 30% 95%;
+
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 20% 60%;
+
+    --accent: 38 85% 58%;
+    --accent-foreground: 25 25% 10%;
+
+    --destructive: 10 65% 50%;
+    --destructive-foreground: 35 30% 95%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 24 80% 58%;
+
+    --sidebar-background: 25 20% 12%;
+    --sidebar-foreground: 35 30% 92%;
+    --sidebar-primary: 24 80% 58%;
+    --sidebar-primary-foreground: 25 25% 10%;
+    --sidebar-accent: 25 15% 18%;
+    --sidebar-accent-foreground: 35 30% 92%;
+    --sidebar-border: 25 15% 22%;
+    --sidebar-ring: 24 80% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Fox-themed button styles */
+  .btn-fox {
+    @apply bg-primary text-primary-foreground font-semibold rounded-full px-8 py-4 
+           shadow-fox hover:shadow-fox-lg transition-all duration-300 
+           hover:scale-105 active:scale-95;
+  }
+
+  .btn-forest {
+    @apply bg-secondary text-secondary-foreground font-semibold rounded-full px-6 py-3
+           shadow-md hover:shadow-lg transition-all duration-300 hover:brightness-110;
+  }
+
+  /* Cozy card styles */
+  .card-den {
+    @apply bg-card rounded-2xl shadow-cozy border border-border/50
+           backdrop-blur-sm transition-all duration-300;
+  }
+
+  .card-memory {
+    @apply bg-gradient-to-br from-fox-cream to-white rounded-2xl 
+           shadow-memory border-2 border-primary/20
+           transition-all duration-500 hover:shadow-memory-hover;
+  }
+
+  /* Parchment texture effect */
+  .parchment {
+    @apply relative;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--fox-amber) / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--primary) / 0.05) 0%, transparent 50%),
+      linear-gradient(to bottom, hsl(var(--parchment)), hsl(var(--fox-cream)));
+  }
+
+  /* Fox glow effect */
+  .fox-glow {
+    @apply relative;
+  }
+  
+  .fox-glow::before {
+    content: '';
+    @apply absolute inset-0 rounded-full opacity-60 blur-2xl -z-10;
+    background: radial-gradient(circle, hsl(var(--fox-amber) / 0.4), transparent 70%);
+  }
+
+  /* Text styles */
+  .text-display {
+    @apply font-display text-foreground tracking-wide;
+  }
+
+  .text-romantic {
+    @apply font-display italic text-primary;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-fox-bounce {
+    animation: fox-bounce 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-leaf-fall {
+    animation: leaf-fall 8s linear infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fox-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/40 rounded-full hover:bg-primary/60 transition-colors;
+}
