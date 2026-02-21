@@ -184,9 +184,25 @@ export const sampleMemories: Memory[] = [
   },
 ];
 
-export const getRandomMemory = (memories: Memory[]): Memory => {
-  const randomIndex = Math.floor(Math.random() * memories.length);
-  return memories[randomIndex];
+// RANDOM MEMORY FUNCTION:
+// export const getRandomMemory = (memories: Memory[]): Memory => {
+//   const randomIndex = Math.floor(Math.random() * memories.length);
+//   return memories[randomIndex];
+// };
+
+export const getRandomMemory = (memories: Memory[], excludedIds: Set<string> = new Set()): Memory => {
+  // Filter out memories that have already been shown
+  const availableMemories = memories.filter(memory => !excludedIds.has(memory.id));
+  
+  // If all memories have been shown, reset and use all memories
+  if (availableMemories.length === 0) {
+    const randomIndex = Math.floor(Math.random() * memories.length);
+    return memories[randomIndex];
+  }
+  
+  // Pick a random memory from the available ones
+  const randomIndex = Math.floor(Math.random() * availableMemories.length);
+  return availableMemories[randomIndex];
 };
 
 export const getMemoryTypeLabel = (type: Memory['type']): string => {

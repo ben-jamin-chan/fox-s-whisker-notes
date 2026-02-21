@@ -16,6 +16,7 @@ const FoxDen = ({ onLogout }: FoxDenProps) => {
   const [currentMemory, setCurrentMemory] = useState<Memory | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [memoriesDrawn, setMemoriesDrawn] = useState(0);
+  const [shownMemoryIds, setShownMemoryIds] = useState<Set<string>>(new Set());
 
   const triggerConfetti = useCallback(() => {
     // Fire confetti from both sides
@@ -45,7 +46,20 @@ const FoxDen = ({ onLogout }: FoxDenProps) => {
     // Simulate a brief delay for anticipation
     await new Promise(resolve => setTimeout(resolve, 800));
     
-    const memory = getRandomMemory(sampleMemories);
+    // UNCOMMENT THIS TO USE THE RANDOM MEMORY FUNCTION
+    // const memory = getRandomMemory(sampleMemories);
+
+    // Check if all memories have been shown, reset if so
+    const currentShownIds = shownMemoryIds.size >= sampleMemories.length 
+      ? new Set<string>() 
+      : shownMemoryIds;
+    
+    const memory = getRandomMemory(sampleMemories, currentShownIds);
+    
+    // Add this memory's ID to the shown set
+    const updatedShownIds = new Set(currentShownIds);
+    updatedShownIds.add(memory.id);
+    setShownMemoryIds(updatedShownIds);
     setCurrentMemory(memory);
     setMemoriesDrawn(prev => prev + 1);
     setIsDrawing(false);
